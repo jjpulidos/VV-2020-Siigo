@@ -28,7 +28,7 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 
 
 
-
+# ##############################################################################################
 # Tenant = dynamodb.Table(tableName["Tenant"])
 # response = Tenant.scan(
 #     FilterExpression=Key('email').eq("multifunctionallab@gmail.com")
@@ -37,9 +37,11 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 # for i in response['Items']:
 #     print(i['name'], ":", i['email'], ":", i['id'])
 
+# ##############################################################################################
 
 
 
+# ##############################################################################################
 # Product = dynamodb.Table(tableName["Product"])
 # response = Product.scan(
 #     FilterExpression=Key('name').eq("Tomate Cherry")
@@ -48,9 +50,12 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 # for i in response['Items']:
 #     print(i['name'], ":", i['description'], ":", i['id'])
 
+# ##############################################################################################
 
 
 
+
+# ##############################################################################################
 # Customer = dynamodb.Table(tableName["Customer"])
 #
 # response = Customer.scan(
@@ -61,12 +66,28 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 #     print(i['tenant_id'], ":", i['first_name'], ":", i['last_name'])
 #
 #
+# ##############################################################################################
 
-Invoices = dynamodb.Table(tableName["Invoices"])
 
-response = Invoices.scan(
-    FilterExpression=Key('doc_number').eq("1")
-)
+# ##############################################################################################
+# Invoices = dynamodb.Table(tableName["Invoices"])
+#
+# response = Invoices.scan(
+#     FilterExpression=Key('doc_number').eq("1")
+# )
+#
+# for i in response['Items']:
+#     print(i['tenant_id'], ":", i['customer_id'], ":", i['total_value'], ":", i["doc_date"])
+# ##############################################################################################
 
-for i in response['Items']:
-    print(i['tenant_id'], ":", i['customer_id'], ":", i['total_value'], ":", i["doc_date"])
+
+# ##############################################################################################
+# InvoiceItem = dynamodb.Table(tableName["Invoice_Item"])
+#
+# response = InvoiceItem.scan(
+#     FilterExpression=Key('invoice_id').eq("5e3f02966841606e28bb69eb")
+# )
+#
+# for i in response['Items']:
+#     print(i['invoice_id'], ":", i['quantity'], ":", i['unit_value'], ":", i["item_value"])
+# ##############################################################################################

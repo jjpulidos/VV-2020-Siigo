@@ -77,28 +77,49 @@ dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
 
 
 # Adding a row in Invoices
-Invoices = dynamodb.Table(tableName["Invoices"])
-tenant_id = "ec059827-3fdd-4ed7-86c2-0a6ec60b6f3b"
-customer_id = "5e3eff138cefb30c13bd541a"
-doc_date = datetime.datetime.now().strftime("%x %X")
-doc_number = "1"
-total_discount = 0
-total_tax = 0
-total_value = 24001
+# Invoices = dynamodb.Table(tableName["Invoices"])
+# tenant_id = "ec059827-3fdd-4ed7-86c2-0a6ec60b6f3b"
+# customer_id = "5e3eff138cefb30c13bd541a"
+# doc_date = datetime.datetime.now().strftime("%x %X")
+# doc_number = "1"
+# total_discount = 0
+# total_tax = 0
+# total_value = 24001
+#
+# response = Invoices.put_item(
+#    Item={
+#         'id': str(bson.objectid.ObjectId()),
+#         'tenant_id': tenant_id,
+#         'customer_id': customer_id,
+#         'doc_date': doc_date,
+#         'doc_number': doc_number,
+#         'total_discount': total_discount,
+#         'total_tax': total_tax,
+#         'total_value': total_value
+#     }
+# )
 
-response = Invoices.put_item(
-   Item={
-        'id': str(bson.objectid.ObjectId()),
-        'tenant_id': tenant_id,
-        'customer_id': customer_id,
-        'doc_date': doc_date,
-        'doc_number': doc_number,
-        'total_discount': total_discount,
-        'total_tax': total_tax,
-        'total_value': total_value
-    }
-)
 
+# Adding a row in Invoice Item
+# InvoiceItem = dynamodb.Table(tableName["Invoice_Item"])
+# tenant_id = "ec059827-3fdd-4ed7-86c2-0a6ec60b6f3b"
+# product_id = "5e3eff138cefb30c13bd541a"
+# invoice_id = "5e3f02966841606e28bb69eb"
+# quantity = decimal.Decimal("2.0")
+# unit_value = decimal.Decimal("12000.45")
+# item_value = decimal.Decimal("24001.0")
+#
+# response = InvoiceItem.put_item(
+#    Item={
+#         'id': str(bson.objectid.ObjectId()),
+#         'tenant_id': tenant_id,
+#         'product_id': product_id,
+#         'invoice_id': invoice_id,
+#         'quantity': quantity,
+#         'unit_value': unit_value,
+#         'item_value': item_value
+#     }
+# )
 # #########################
 print("PutItem succeeded:")
 print(json.dumps(response, indent=4, cls=DecimalEncoder))

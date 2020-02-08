@@ -5,18 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analytics/Data_Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Data_Generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analytics/Read_DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Read_DB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/.config/local-env-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/.config/local-env-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581175325085</updated>
-      <workItem from="1581175329591" duration="9050000" />
+      <workItem from="1581175329591" duration="11148000" />
     </task>
     <servers />
   </component>
@@ -139,25 +127,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581187740588">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581189725383">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581187740588" />
-    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581187740587">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581189725383" />
+    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581189725382">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581187740587" />
-    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581187740587">
+    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581189725382" />
+    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581189725382">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581187740587" />
-    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581187740588">
+    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581189725382" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581189725382">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581187740588" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581189725382" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Data_Generator.coverage" NAME="Data_Generator Coverage Results" MODIFIED="1581187734301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
-    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Read_DB.coverage" NAME="Read_DB Coverage Results" MODIFIED="1581187740580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Data_Generator.coverage" NAME="Data_Generator Coverage Results" MODIFIED="1581189703410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Read_DB.coverage" NAME="Read_DB Coverage Results" MODIFIED="1581189725368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
   </component>
 </project>
