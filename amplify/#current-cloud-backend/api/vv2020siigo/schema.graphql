@@ -27,7 +27,7 @@ type Invoices @model {
 	doc_date: String!
 	doc_number: String!
 	total_discount: Int!
-	total_taxt: Int!
+	total_tax: Int!
 	total_value: Int!
 }
 
