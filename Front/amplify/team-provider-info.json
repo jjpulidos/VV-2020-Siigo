@@ -1,0 +1,20 @@
+{
+    "vvsiigo": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-vv-2020-siigo-vvsiigo-105803-authRole",
+            "UnauthRoleArn": "arn:aws:iam::465046956217:role/amplify-vv-2020-siigo-vvsiigo-105803-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::465046956217:role/amplify-vv-2020-siigo-vvsiigo-105803-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-vv-2020-siigo-vvsiigo-105803-deployment",
+            "UnauthRoleName": "amplify-vv-2020-siigo-vvsiigo-105803-unauthRole",
+            "StackName": "amplify-vv-2020-siigo-vvsiigo-105803",
+            "StackId": "arn:aws:cloudformation:us-west-2:465046956217:stack/amplify-vv-2020-siigo-vvsiigo-105803/cc91acb0-4a8b-11ea-9e6e-0ac86d6e8b22",
+            "AmplifyAppId": "d2or2ioq32p37z"
+        },
+        "categories": {
+            "auth": {
+                "vv2020siigo": {}
+            }
+        }
+    }
+}

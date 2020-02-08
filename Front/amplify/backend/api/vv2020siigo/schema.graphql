@@ -1,0 +1,42 @@
+type Tenant @model {
+	id: ID!
+	name: String!
+	email: String!
+}
+
+type Product @model {
+	id: ID!
+	tenant_id: String!
+	name: String!
+	description: String!
+	price: Float!
+	expired_date: String!
+}
+
+type Customer @model {
+	id: ID!
+	tenant_id: String!
+	first_name: String!
+	last_name: String!
+}
+
+type Invoices @model {
+	id: ID!
+	tenant_id: String!
+	customer_id: String!
+	doc_date: String!
+	doc_number: String!
+	total_discount: Int!
+	total_taxt: Int!
+	total_value: Int!
+}
+
+type InvoiceItem @model {
+	id: ID!
+  	tenant_id: Int!
+  	product_id: Int!
+  	invoice_id: Int!
+  	quantity: Float!
+  	unit_value: Float!
+  	item_value: Float!
+}

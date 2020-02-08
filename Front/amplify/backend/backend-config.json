@@ -1,0 +1,32 @@
+{
+	"auth": {
+		"vv2020siigo": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"vv2020siigo": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authvv2020siigo"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"vv2020siigo": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
