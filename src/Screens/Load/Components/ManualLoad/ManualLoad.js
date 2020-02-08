@@ -43,8 +43,8 @@ export const ManualLoad = () => {
   return (
     <st.ManualLoadContainer>
         <st.Form>
-          {ReturnFields()}
-          <Button style={{width: '25%'}} type='primary' onClick={SendData}> Crear </Button> 
+            {ReturnFields()}
+            <Button style={{width: '25%'}} type='primary' onClick={SendData}> Crear </Button> 
         </st.Form>
     </st.ManualLoadContainer>
   );

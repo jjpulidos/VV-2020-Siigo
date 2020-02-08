@@ -20,12 +20,16 @@ export const Title = styled.p`
   margin: 0;
   font-weight: bolder;
   font-size: 1.4em;
+  grid-column: 1/4;
+  grid-row: 2/3;
 `;
 
 export const SelectedLoadOptionContainer = styled.div`
+  width: 100%;
+  height: 100%;
   grid-column: 2/12;
-  grid-row: 3/9;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
+  grid-row: 3/11;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 `;
