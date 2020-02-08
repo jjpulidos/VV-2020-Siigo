@@ -5,6 +5,14 @@ import decimal
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 
+tableName = {
+    "Tenant": "Tenant-audikvopovh2tbgiuxmmbys7vu-vvsiigo",
+    "Product": "Product-audikvopovh2tbgiuxmmbys7vu-vvsiigo",
+    "Invoices": "Invoices-audikvopovh2tbgiuxmmbys7vu-vvsiigo",
+    "Invoice_Item": "InvoiceItem-audikvopovh2tbgiuxmmbys7vu-vvsiigo",
+    "Customer": "Customer-audikvopovh2tbgiuxmmbys7vu-vvsiigo"
+}
+
 # Helper class to convert a DynamoDB item to JSON.
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
@@ -17,11 +25,18 @@ class DecimalEncoder(json.JSONEncoder):
 
 dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 
-table = dynamodb.Table('Tenant-audikvopovh2tbgiuxmmbys7vu-vvsiigo')
+# Tenant = dynamodb.Table(tableName["Tenant"])
+# response = Tenant.scan(
+#     FilterExpression=Key('email').eq("multifunctionallab@gmail.com")
+# )
+#
+# for i in response['Items']:
+#     print(i['name'], ":", i['email'], ":", i['id'])
 
-response = table.query(
-    KeyConditionExpression=Key('id').eq("jj")
+Product = dynamodb.Table(tableName["Product"])
+response = Product.scan(
+    FilterExpression=Key('name').eq("Tomate Cherry")
 )
 
 for i in response['Items']:
-    print(i['name'], ":", i['email'])
+    print(i['name'], ":", i['description'], ":", i['id'])
