@@ -27,7 +27,7 @@ type Invoices {
   doc_date: String!
   doc_number: String!
   total_discount: Int!
-  total_taxt: Int!
+  total_tax: Int!
   total_value: Int!
 }
 
@@ -323,7 +323,7 @@ input ModelInvoicesFilterInput {
   doc_date: ModelStringInput
   doc_number: ModelStringInput
   total_discount: ModelIntInput
-  total_taxt: ModelIntInput
+  total_tax: ModelIntInput
   total_value: ModelIntInput
   and: [ModelInvoicesFilterInput]
   or: [ModelInvoicesFilterInput]
@@ -337,7 +337,7 @@ input CreateInvoicesInput {
   doc_date: String!
   doc_number: String!
   total_discount: Int!
-  total_taxt: Int!
+  total_tax: Int!
   total_value: Int!
 }
 
@@ -348,7 +348,7 @@ input UpdateInvoicesInput {
   doc_date: String
   doc_number: String
   total_discount: Int
-  total_taxt: Int
+  total_tax: Int
   total_value: Int
 }
 
@@ -362,7 +362,7 @@ input ModelInvoicesConditionInput {
   doc_date: ModelStringInput
   doc_number: ModelStringInput
   total_discount: ModelIntInput
-  total_taxt: ModelIntInput
+  total_tax: ModelIntInput
   total_value: ModelIntInput
   and: [ModelInvoicesConditionInput]
   or: [ModelInvoicesConditionInput]
