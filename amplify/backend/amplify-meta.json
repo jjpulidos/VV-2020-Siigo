@@ -1,0 +1,78 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-vv-2020-siigo-vvsiigo-105803-authRole",
+			"UnauthRoleArn": "arn:aws:iam::465046956217:role/amplify-vv-2020-siigo-vvsiigo-105803-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::465046956217:role/amplify-vv-2020-siigo-vvsiigo-105803-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "amplify-vv-2020-siigo-vvsiigo-105803-deployment",
+			"UnauthRoleName": "amplify-vv-2020-siigo-vvsiigo-105803-unauthRole",
+			"StackName": "amplify-vv-2020-siigo-vvsiigo-105803",
+			"StackId": "arn:aws:cloudformation:us-west-2:465046956217:stack/amplify-vv-2020-siigo-vvsiigo-105803/cc91acb0-4a8b-11ea-9e6e-0ac86d6e8b22",
+			"AmplifyAppId": "d2or2ioq32p37z"
+		}
+	},
+	"auth": {
+		"vv2020siigo": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/auth/vv2020siigo-cloudformation-template.yml",
+				"logicalId": "authvv2020siigo"
+			},
+			"lastPushTimeStamp": "2020-02-08T16:46:25.212Z",
+			"output": {
+				"AppClientSecret": "1pv2snqludtd1r65jrhoo54451f1kfofos4srn8cdfrr68ntlj3c",
+				"UserPoolId": "us-west-2_BWLOmkh5J",
+				"AppClientIDWeb": "8dro95t1nnrck0s9r5cllrgru",
+				"AppClientID": "133chpmt97o9ectiffbqm2dr6s",
+				"IdentityPoolId": "us-west-2:fdd176bc-a348-4802-8a21-1f007ee8725c",
+				"IdentityPoolName": "vv2020siigo__vvsiigo",
+				"UserPoolName": "vv2020-userpool"
+			},
+			"lastPushDirHash": "EqTB3bIw+BqBUfd2m4bSz+wDuAE="
+		}
+	},
+	"api": {
+		"vv2020siigo": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authvv2020siigo"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "audikvopovh2tbgiuxmmbys7vu",
+				"GraphQLAPIEndpointOutput": "https://5yv5obbypvgaxdswzcide2khoq.appsync-api.us-west-2.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apivv2020siigo"
+			},
+			"lastPushTimeStamp": "2020-02-08T16:46:28.159Z",
+			"lastPushDirHash": "79YciWr8iUkRgvIbPlPp+ZxXYDw="
+		}
+	},
+	"storage": {
+		"vv2020siigo": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storagevv2020siigo"
+			},
+			"lastPushTimeStamp": "2020-02-08T16:46:25.215Z",
+			"output": {
+				"BucketName": "vv2020siigo-vvsiigo",
+				"Region": "us-west-2"
+			},
+			"lastPushDirHash": "YM5msCxpthUilI4argzsmC+vyfc="
+		}
+	}
+}

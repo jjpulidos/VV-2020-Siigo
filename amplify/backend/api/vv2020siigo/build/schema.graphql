@@ -1,0 +1,424 @@
+type Tenant {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Product {
+  id: ID!
+  tenant_id: String!
+  name: String!
+  description: String!
+  price: Float!
+  expired_date: String!
+}
+
+type Customer {
+  id: ID!
+  tenant_id: String!
+  first_name: String!
+  last_name: String!
+}
+
+type Invoices {
+  id: ID!
+  tenant_id: String!
+  customer_id: String!
+  doc_date: String!
+  doc_number: String!
+  total_discount: Int!
+  total_taxt: Int!
+  total_value: Int!
+}
+
+type InvoiceItem {
+  id: ID!
+  tenant_id: Int!
+  product_id: Int!
+  invoice_id: Int!
+  quantity: Float!
+  unit_value: Float!
+  item_value: Float!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelTenantConnection {
+  items: [Tenant]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelTenantFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  email: ModelStringInput
+  and: [ModelTenantFilterInput]
+  or: [ModelTenantFilterInput]
+  not: ModelTenantFilterInput
+}
+
+type Query {
+  getTenant(id: ID!): Tenant
+  listTenants(filter: ModelTenantFilterInput, limit: Int, nextToken: String): ModelTenantConnection
+  getProduct(id: ID!): Product
+  listProducts(filter: ModelProductFilterInput, limit: Int, nextToken: String): ModelProductConnection
+  getCustomer(id: ID!): Customer
+  listCustomers(filter: ModelCustomerFilterInput, limit: Int, nextToken: String): ModelCustomerConnection
+  getInvoices(id: ID!): Invoices
+  listInvoicess(filter: ModelInvoicesFilterInput, limit: Int, nextToken: String): ModelInvoicesConnection
+  getInvoiceItem(id: ID!): InvoiceItem
+  listInvoiceItems(filter: ModelInvoiceItemFilterInput, limit: Int, nextToken: String): ModelInvoiceItemConnection
+}
+
+input CreateTenantInput {
+  id: ID
+  name: String!
+  email: String!
+}
+
+input UpdateTenantInput {
+  id: ID!
+  name: String
+  email: String
+}
+
+input DeleteTenantInput {
+  id: ID
+}
+
+type Mutation {
+  createTenant(input: CreateTenantInput!, condition: ModelTenantConditionInput): Tenant
+  updateTenant(input: UpdateTenantInput!, condition: ModelTenantConditionInput): Tenant
+  deleteTenant(input: DeleteTenantInput!, condition: ModelTenantConditionInput): Tenant
+  createProduct(input: CreateProductInput!, condition: ModelProductConditionInput): Product
+  updateProduct(input: UpdateProductInput!, condition: ModelProductConditionInput): Product
+  deleteProduct(input: DeleteProductInput!, condition: ModelProductConditionInput): Product
+  createCustomer(input: CreateCustomerInput!, condition: ModelCustomerConditionInput): Customer
+  updateCustomer(input: UpdateCustomerInput!, condition: ModelCustomerConditionInput): Customer
+  deleteCustomer(input: DeleteCustomerInput!, condition: ModelCustomerConditionInput): Customer
+  createInvoices(input: CreateInvoicesInput!, condition: ModelInvoicesConditionInput): Invoices
+  updateInvoices(input: UpdateInvoicesInput!, condition: ModelInvoicesConditionInput): Invoices
+  deleteInvoices(input: DeleteInvoicesInput!, condition: ModelInvoicesConditionInput): Invoices
+  createInvoiceItem(input: CreateInvoiceItemInput!, condition: ModelInvoiceItemConditionInput): InvoiceItem
+  updateInvoiceItem(input: UpdateInvoiceItemInput!, condition: ModelInvoiceItemConditionInput): InvoiceItem
+  deleteInvoiceItem(input: DeleteInvoiceItemInput!, condition: ModelInvoiceItemConditionInput): InvoiceItem
+}
+
+input ModelTenantConditionInput {
+  name: ModelStringInput
+  email: ModelStringInput
+  and: [ModelTenantConditionInput]
+  or: [ModelTenantConditionInput]
+  not: ModelTenantConditionInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Subscription {
+  onCreateTenant: Tenant @aws_subscribe(mutations: ["createTenant"])
+  onUpdateTenant: Tenant @aws_subscribe(mutations: ["updateTenant"])
+  onDeleteTenant: Tenant @aws_subscribe(mutations: ["deleteTenant"])
+  onCreateProduct: Product @aws_subscribe(mutations: ["createProduct"])
+  onUpdateProduct: Product @aws_subscribe(mutations: ["updateProduct"])
+  onDeleteProduct: Product @aws_subscribe(mutations: ["deleteProduct"])
+  onCreateCustomer: Customer @aws_subscribe(mutations: ["createCustomer"])
+  onUpdateCustomer: Customer @aws_subscribe(mutations: ["updateCustomer"])
+  onDeleteCustomer: Customer @aws_subscribe(mutations: ["deleteCustomer"])
+  onCreateInvoices: Invoices @aws_subscribe(mutations: ["createInvoices"])
+  onUpdateInvoices: Invoices @aws_subscribe(mutations: ["updateInvoices"])
+  onDeleteInvoices: Invoices @aws_subscribe(mutations: ["deleteInvoices"])
+  onCreateInvoiceItem: InvoiceItem @aws_subscribe(mutations: ["createInvoiceItem"])
+  onUpdateInvoiceItem: InvoiceItem @aws_subscribe(mutations: ["updateInvoiceItem"])
+  onDeleteInvoiceItem: InvoiceItem @aws_subscribe(mutations: ["deleteInvoiceItem"])
+}
+
+type ModelProductConnection {
+  items: [Product]
+  nextToken: String
+}
+
+input ModelProductFilterInput {
+  id: ModelIDInput
+  tenant_id: ModelStringInput
+  name: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  expired_date: ModelStringInput
+  and: [ModelProductFilterInput]
+  or: [ModelProductFilterInput]
+  not: ModelProductFilterInput
+}
+
+input CreateProductInput {
+  id: ID
+  tenant_id: String!
+  name: String!
+  description: String!
+  price: Float!
+  expired_date: String!
+}
+
+input UpdateProductInput {
+  id: ID!
+  tenant_id: String
+  name: String
+  description: String
+  price: Float
+  expired_date: String
+}
+
+input DeleteProductInput {
+  id: ID
+}
+
+input ModelProductConditionInput {
+  tenant_id: ModelStringInput
+  name: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  expired_date: ModelStringInput
+  and: [ModelProductConditionInput]
+  or: [ModelProductConditionInput]
+  not: ModelProductConditionInput
+}
+
+type ModelCustomerConnection {
+  items: [Customer]
+  nextToken: String
+}
+
+input ModelCustomerFilterInput {
+  id: ModelIDInput
+  tenant_id: ModelStringInput
+  first_name: ModelStringInput
+  last_name: ModelStringInput
+  and: [ModelCustomerFilterInput]
+  or: [ModelCustomerFilterInput]
+  not: ModelCustomerFilterInput
+}
+
+input CreateCustomerInput {
+  id: ID
+  tenant_id: String!
+  first_name: String!
+  last_name: String!
+}
+
+input UpdateCustomerInput {
+  id: ID!
+  tenant_id: String
+  first_name: String
+  last_name: String
+}
+
+input DeleteCustomerInput {
+  id: ID
+}
+
+input ModelCustomerConditionInput {
+  tenant_id: ModelStringInput
+  first_name: ModelStringInput
+  last_name: ModelStringInput
+  and: [ModelCustomerConditionInput]
+  or: [ModelCustomerConditionInput]
+  not: ModelCustomerConditionInput
+}
+
+type ModelInvoicesConnection {
+  items: [Invoices]
+  nextToken: String
+}
+
+input ModelInvoicesFilterInput {
+  id: ModelIDInput
+  tenant_id: ModelStringInput
+  customer_id: ModelStringInput
+  doc_date: ModelStringInput
+  doc_number: ModelStringInput
+  total_discount: ModelIntInput
+  total_taxt: ModelIntInput
+  total_value: ModelIntInput
+  and: [ModelInvoicesFilterInput]
+  or: [ModelInvoicesFilterInput]
+  not: ModelInvoicesFilterInput
+}
+
+input CreateInvoicesInput {
+  id: ID
+  tenant_id: String!
+  customer_id: String!
+  doc_date: String!
+  doc_number: String!
+  total_discount: Int!
+  total_taxt: Int!
+  total_value: Int!
+}
+
+input UpdateInvoicesInput {
+  id: ID!
+  tenant_id: String
+  customer_id: String
+  doc_date: String
+  doc_number: String
+  total_discount: Int
+  total_taxt: Int
+  total_value: Int
+}
+
+input DeleteInvoicesInput {
+  id: ID
+}
+
+input ModelInvoicesConditionInput {
+  tenant_id: ModelStringInput
+  customer_id: ModelStringInput
+  doc_date: ModelStringInput
+  doc_number: ModelStringInput
+  total_discount: ModelIntInput
+  total_taxt: ModelIntInput
+  total_value: ModelIntInput
+  and: [ModelInvoicesConditionInput]
+  or: [ModelInvoicesConditionInput]
+  not: ModelInvoicesConditionInput
+}
+
+type ModelInvoiceItemConnection {
+  items: [InvoiceItem]
+  nextToken: String
+}
+
+input ModelInvoiceItemFilterInput {
+  id: ModelIDInput
+  tenant_id: ModelIntInput
+  product_id: ModelIntInput
+  invoice_id: ModelIntInput
+  quantity: ModelFloatInput
+  unit_value: ModelFloatInput
+  item_value: ModelFloatInput
+  and: [ModelInvoiceItemFilterInput]
+  or: [ModelInvoiceItemFilterInput]
+  not: ModelInvoiceItemFilterInput
+}
+
+input CreateInvoiceItemInput {
+  id: ID
+  tenant_id: Int!
+  product_id: Int!
+  invoice_id: Int!
+  quantity: Float!
+  unit_value: Float!
+  item_value: Float!
+}
+
+input UpdateInvoiceItemInput {
+  id: ID!
+  tenant_id: Int
+  product_id: Int
+  invoice_id: Int
+  quantity: Float
+  unit_value: Float
+  item_value: Float
+}
+
+input DeleteInvoiceItemInput {
+  id: ID
+}
+
+input ModelInvoiceItemConditionInput {
+  tenant_id: ModelIntInput
+  product_id: ModelIntInput
+  invoice_id: ModelIntInput
+  quantity: ModelFloatInput
+  unit_value: ModelFloatInput
+  item_value: ModelFloatInput
+  and: [ModelInvoiceItemConditionInput]
+  or: [ModelInvoiceItemConditionInput]
+  not: ModelInvoiceItemConditionInput
+}
