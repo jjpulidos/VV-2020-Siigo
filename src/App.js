@@ -1,26 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Login } from './Screens/Login/Login';
 
-function App() {
+import { Router, navigate } from '@reach/router';
+import { Load } from './Screens/Load/Load';
+
+const App = () => {
+  useEffect(() => {
+    navigate('login');
+  }, []);
+
   return (
-    <div className='App '>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Login path='/login' />
+      <Load path='load' />
+    </Router>
   );
-}
+};
 
 export default App;
