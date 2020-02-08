@@ -4,6 +4,7 @@ import json
 import decimal
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
+import os
 
 tableName = {
     "Tenant": "Tenant-audikvopovh2tbgiuxmmbys7vu-vvsiigo",
@@ -13,6 +14,7 @@ tableName = {
     "Customer": "Customer-audikvopovh2tbgiuxmmbys7vu-vvsiigo"
 }
 
+# print(os.listdir("."))
 # Helper class to convert a DynamoDB item to JSON.
 class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
