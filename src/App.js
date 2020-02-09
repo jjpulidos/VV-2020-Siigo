@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Login } from './Screens/Login/Login';
 
-function App() {
+import { Router, navigate } from '@reach/router';
+import { Load } from './Screens/Load/Load';
+import { MainMenu } from './Screens/MainMenu/MainMenu';
+import { ControlPanel } from './Screens/ControlPanel/ControlPanel';
+import { AddClient } from './Screens/AddClient/AddClient';
+
+const App = () => {
+  useEffect(() => {
+    //navigate('main-menu');
+  }, []);
+
   return (
-    <div className='App '>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Login path='login' />
+      <MainMenu path='main-menu' />
+      <Load path='load' />
+      <AddClient path='add-client' />
+      <ControlPanel path='control-panel' />
+    </Router>
   );
-}
+};
 
 export default App;

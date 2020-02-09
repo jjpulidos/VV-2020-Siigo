@@ -1,14 +1,8 @@
 {
-    "CreateAPIKey": 0,
+    "CreateAPIKey": 1,
     "AppSyncApiName": "vv2020siigo",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
-    "AuthCognitoUserPoolId": {
-        "Fn::GetAtt": [
-            "authvv2020siigo",
-            "Outputs.UserPoolId"
-        ]
-    },
     "S3DeploymentBucket": "amplify-vv-2020-siigo-vvsiigo-105803-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/b0f690ee84f8d399a3ba594045e8f0b40ff08762"
+    "S3DeploymentRootKey": "amplify-appsync-files/03690dc261054ce130171ba5cdf549afddffa81d"
 }
