@@ -21,19 +21,25 @@ export const SearchInputContainer = styled.div `
 
 export const ClientsListContainer = styled.div `
     grid-column: 2/6;
-    grid-row: 5/12;
+    grid-row: 4/13;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-gap: 1em;
+    grid-gap: .8em;
 `
 
 export const SingleClient = styled.div `
-    
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    height: 65px;
+    display: grid;
+    grid-template-columns: 5em 1fr 1fr;
+    grid-gap: .5em;
 `
 
 export const InfoText = styled.p `
     font-size: 1.1em;
     color: #323232;
+    display: flex;
+    align-items: center;
 `
 export const NoClientsToShow = styled.div `
     grid-column: 1/6;

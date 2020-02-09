@@ -20,6 +20,17 @@ export const CreateProductService = data =>
 
 
 
+export const CreateClientService = (id, data) => 
+    API.graphql(graphqlOperation(mutation.createCustomer, {
+        input: {
+            tenant_id: id,
+            first_name: data.name,
+            last_name: data.lastname
+        }
+    }))
+
+
+
 export const BringSomeProducts = (limit, id) => 
     API.graphql(graphqlOperation(query.listProducts,  {
         filter: {
@@ -27,7 +38,7 @@ export const BringSomeProducts = (limit, id) =>
                 eq: id
             },
         
-        }, limit: 28
+        }, limit: 100000
         
         
     }))
@@ -40,7 +51,7 @@ export const BringSomeCustomers = (id) =>
                 eq: id
             },
         
-        }, limit: 28
+        }, limit: 100000
     }))
 
 
@@ -66,6 +77,14 @@ export const DeleteProduct = id =>
         }
     }))
 
+export const DeleteClient = id => 
+    API.graphql(graphqlOperation(mutation.deleteCustomer, {
+        input: {
+            id: id
+        }
+    }))
+
+    
 
 
 export const SubscribeToProductsTableAtDelete = () => 
@@ -75,3 +94,7 @@ export const SubscribeToProductsTableAtDelete = () =>
 
 export const SubscribeToProductsTableAtCreate = () => 
     API.graphql(graphqlOperation(subscription.onCreateProduct))
+
+
+export const SubscribeToClientsAtCreate = () =>
+    API.graphql(graphqlOperation(subscription.onCreateCustomer))
