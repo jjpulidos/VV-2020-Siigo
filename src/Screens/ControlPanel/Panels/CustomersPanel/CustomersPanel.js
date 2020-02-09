@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import * as st from './CustomersPanel.styles'
-import { Input, Empty, AutoComplete, Icon } from 'antd'
-import { BringSomeCustomers, SubscribeToClientsAtCreate, DeleteClient } from '../../../../Services/AppSyncInteraction'
-import Swal from ''
+import { Input, Empty, AutoComplete, Icon, Modal} from 'antd'
+import { BringSomeCustomers, SubscribeToClientsAtDelete, SubscribeToClientsAtCreate, DeleteClient, SubscribeToClientsAtUpdate } from '../../../../Services/AppSyncInteraction'
+import Swal from 'sweetalert2'
+import { ClientEditor } from './Components/ClientEditor'
+import * as _ from 'lodash'
 
 
 
@@ -16,6 +18,14 @@ export const CustomersPanel = () => {
     const [NewClient, setNewClient] = useState({})
     const [LocalClientToEdit, setLocalClientToEdit] = useState({})
     const [ShowClientList, setShowClientList] = useState(true)
+    const [PageNumber, setPageNumber] = useState(1)
+    const [PaginationRange, setPaginationRange] = useState(0)
+    const [TotalPages, setTotalPages] = useState(0)
+    const [LastSerchs, setLastSearchs] = useState([])
+    const [ModalVisibility, setModalVisibility] = useState(false)
+
+
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'top',
@@ -28,6 +38,7 @@ export const CustomersPanel = () => {
     // This function returns the first Customers
     useEffect(() => {
         BringClients()
+        setLastSearchs(JSON.parse(localStorage.getItem('csearchs')))
     }, [])
 
 
@@ -44,14 +55,28 @@ export const CustomersPanel = () => {
 
 
 
+
     // This function subscribe to the user creation event
     useEffect(() => {
         const sub_creation = SubscribeToClientsAtCreate().subscribe({
-            next: item => {
-                let newItem = item.value.data.onCreateCustomer
-                setNewClient(newItem)   
+            next: () => {
+                BringClients()
             }
         })
+
+        const sub_update = SubscribeToClientsAtUpdate().subscribe({
+            next: () => BringClients()
+        })
+
+        const sub_delete = SubscribeToClientsAtDelete().subscribe({
+            next: () => BringClients()
+        })
+
+        return () => {
+            sub_creation.unsubscribe()
+            sub_update.unsubscribe()
+            sub_delete.unsubscribe()
+        }
     }, [])
 
 
@@ -62,15 +87,18 @@ export const CustomersPanel = () => {
                 setClients(res.data.listCustomers.items)
                 setNamesArray(res.data.listCustomers.items.map(x=>x.first_name))
                 setDataSource(res.data.listCustomers.items.map(x=>x.first_name))
+                setTotalPages(parseInt(res.data.listProducts.items.length / 5))
             })
             .catch(err => console.error(err))
 
 
     const ReturnClients = () => 
-            Clients.map((client, index) => 
-                <st.SingleClient key={index}>
-                    <st.InfoText> {client.first_name} {client.last_name} </st.InfoText>
-                </st.SingleClient>
+        Clients.slice(PaginationRange, PaginationRange + 5).map((client, index) => 
+            <st.SingleClient key={index}>
+                <st.InfoText> {client.first_name} {client.last_name} </st.InfoText>
+                <Icon onClick={() => HandleIconsBehavior('edit', client)} type='edit' style={{fontSize: '1.5em', cursor: 'pointer', color: 'steelblue'}} />
+                <Icon onClick={() => HandleIconsBehavior('delete', null, client.id)} type='delete' style={{fontSize: '1.5em', cursor: 'pointer', color: 'tomato'}} />
+            </st.SingleClient>
             )
 
 
@@ -78,8 +106,8 @@ export const CustomersPanel = () => {
             Clients.filter(x=>x.first_name.toLowerCase().includes(SearchText.toLowerCase())).map((client, index) => 
                 <st.SingleClient key={index}>
                     <st.InfoText> {client.first_name} {client.last_name} </st.InfoText>
-                    <Icon onClick={() => HandleIconsBehavior('edit', client)} type='edit' style={{cursor: 'pointer', color: 'steelblue'}} />
-                    <Icon onClick={() => HandleIconsBehavior('delete', null, client.id)} type='delete' style={{cursor: 'pointer', color: 'tomato'}} />
+                    <Icon onClick={() => HandleIconsBehavior('edit', client)} type='edit' style={{fontSize: '2em', cursor: 'pointer', color: 'steelblue'}} />
+                    <Icon onClick={() => HandleIconsBehavior('delete', null, client.id)} type='delete' style={{fontSize: '2em', cursor: 'pointer', color: 'tomato'}} />
                 </st.SingleClient>
             )
 
@@ -137,18 +165,69 @@ export const CustomersPanel = () => {
         setSearchText(text)
         setDataSource(DataSource.filter(x => x.toLowerCase().includes(text.toLowerCase())))
         }
+
+        const SaveSearch = searchedvalue => {
+            setSearchText(searchedvalue)
+            setSearchText(searchedvalue)
+            let searchs = []
+            if (LastSerchs !== null){
+                if (LastSerchs.length < 3 ) {
+                    searchs = LastSerchs
+                    searchs.push(searchedvalue)
+                    localStorage.setItem('csearchs', JSON.stringify(searchs))
+                }else {
+                    searchs = LastSerchs
+                    searchs.shift()
+                    searchs.push(searchedvalue)
+                    localStorage.setItem('csearchs', JSON.stringify(searchs))
+                }
+            }else {
+                searchs.push(searchedvalue)
+                localStorage.setItem('csearchs', JSON.stringify(searchs))
+            }
+            
+            
+          }
+
+
+
+        const NextPage = () => {
+            if (PageNumber < Clients.length / 5) {
+                setPageNumber(PageNumber + 1)
+                if (PageNumber === TotalPages - 1) {
+                    setPaginationRange(PaginationRange + 5)
+                } else {
+                    setPaginationRange(PaginationRange + 5)
+                }
+            }
+          }
+    
+    
+          const PrevPage = () => {
+            if (PageNumber > 1) {
+                setPageNumber(PageNumber - 1)
+                setPaginationRange(PaginationRange - 5)
+              }
+          }
+
+          const ShowModal = () => {
+            setModalVisibility(true)
+          }
     
 
 
     return (
         <st.CustomersPanelContaiener>
-            <st.Title> Clientes </st.Title>
+             <st.TopTitlesContainer>
+                <st.Title onClick={()=>localStorage.removeItem('searchs')}> Clientes </st.Title>
+                <st.LastSearchedContainer onClick={ShowModal}> últimas búsquedas </st.LastSearchedContainer> 
+            </st.TopTitlesContainer>
             
             <st.SearchInputContainer>
             <AutoComplete
                 dataSource={DataSource}
                 style={{width: '100%'}}
-                onSelect={selected => setSearchText(selected)}
+                onSelect={selected => SaveSearch(selected)}
                 value={SearchText}
                 onSearch={text => SearchValue(text)}
                 placeholder="Busca a algún cliente..."
@@ -156,7 +235,7 @@ export const CustomersPanel = () => {
             </st.SearchInputContainer>
 
             {
-                ShowClientList &&
+                ShowClientList ?
                 <st.ClientsListContainer>
                     { (Clients.length && !SearchText.length) 
                         ? ReturnClients() :
@@ -166,8 +245,26 @@ export const CustomersPanel = () => {
                             <Empty description='Sin clientes aún' />
                         </st.NoClientsToShow>
                     }
+
+                    <st.PaginationContainer>
+                        <Icon onClick={PrevPage} style={{cursor: 'pointer', color: '#1890FF', fontSize: '1.2em'}} type='arrow-left' />
+                            { PageNumber }
+                        <Icon onClick={NextPage} style={{cursor: 'pointer', color: '#1890FF', fontSize: '1.2em'}} type='arrow-right' />
+                    </st.PaginationContainer> 
                 </st.ClientsListContainer>
+                :
+                <ClientEditor showListAgain={() => setShowClientList(true) }  client={LocalClientToEdit} />
             }
+
+
+        <Modal
+          title="Últimas búsquedas realizadas"
+          visible={ModalVisibility}
+          onOk={() => setModalVisibility(false)}
+          onCancel={() => setModalVisibility(false)}
+        >
+            { LastSerchs && LastSerchs.map((search, index) => <p key={index}>{search}</p>) }
+        </Modal>
         </st.CustomersPanelContaiener> 
     )
 }

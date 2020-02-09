@@ -5,7 +5,8 @@ import {
     BringSomeProducts, 
     DeleteProduct, 
     SubscribeToProductsTableAtDelete,
-    SubscribeToProductsTableAtCreate
+    SubscribeToProductsTableAtCreate,
+    SubscribeToProductsTableAtUpdate
 } from '../../../../Services/AppSyncInteraction'
 import { ProductEdition } from './Components/ProductEdition/ProductEdition';
 import Swal from 'sweetalert2'
@@ -68,14 +69,16 @@ export const ProductsPanel = () => {
 
         const sub_on_create = SubscribeToProductsTableAtCreate()
             .subscribe({
-                next: item => {
-                    console.log(item)
-                    let newItem = item.value.data.onCreateProduct
-                    setNewProduct(newItem)
-                    setDataSource([...DataSource, newItem.name])
-                    setNamesArray([...NamesArray, newItem.name])
+                next: () => {
+                    BringProducts(10, TenantID)
                 }
             })
+        
+        const sub_on_update = SubscribeToProductsTableAtUpdate()
+            .subscribe({
+                next: () => BringProducts(10, TenantID)
+            })
+
         return () => {
             sub_on_delete.unsubscribe()
             sub_on_create.unsubscribe()
@@ -183,6 +186,14 @@ export const ProductsPanel = () => {
       }
 
 
+      const PrevPage = () => {
+        if (PageNumber > 1) {
+            setPageNumber(PageNumber - 1)
+            setPaginationRange(PaginationRange - 10)
+          }
+      }
+
+
       const SaveSearch = searchedvalue => {
         setSearchText(searchedvalue)
         let searchs = []
@@ -205,12 +216,7 @@ export const ProductsPanel = () => {
         
       }
 
-      const PrevPage = () => {
-        if (PageNumber > 1) {
-            setPageNumber(PageNumber - 1)
-            setPaginationRange(PaginationRange - 10)
-          }
-      }
+      
 
 
       const SearchValue = text => {
@@ -258,7 +264,7 @@ export const ProductsPanel = () => {
                         </st.NoProductsToShow>
                     }
 
-                <st.PaginationContainer>
+                    <st.PaginationContainer>
                         <Icon onClick={PrevPage} style={{cursor: 'pointer', color: '#1890FF', fontSize: '1.2em'}} type='arrow-left' />
                             { PageNumber }
                         <Icon onClick={NextPage} style={{cursor: 'pointer', color: '#1890FF', fontSize: '1.2em'}} type='arrow-right' />

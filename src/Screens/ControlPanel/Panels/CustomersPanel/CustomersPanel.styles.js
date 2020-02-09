@@ -29,10 +29,11 @@ export const ClientsListContainer = styled.div `
 export const SingleClient = styled.div `
     padding: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
-    height: 65px;
+    height: 60px;
     display: grid;
-    grid-template-columns: 5em 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr;
     grid-gap: .5em;
+    align-content: center;
 `
 
 export const InfoText = styled.p `
@@ -40,10 +41,37 @@ export const InfoText = styled.p `
     color: #323232;
     display: flex;
     align-items: center;
+    margin: 0;
 `
 export const NoClientsToShow = styled.div `
     grid-column: 1/6;
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+export const PaginationContainer = styled.div `
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5%;
+`
+export const TopTitlesContainer = styled.div `
+    grid-column: 2/7;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+`
+
+export const LastSearchedContainer = styled.p `
+    margin: .1em 0 0 1em;
+    color: #1890FF;
+    font-size: 1em;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 `

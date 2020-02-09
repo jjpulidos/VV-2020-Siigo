@@ -67,6 +67,17 @@ export const UpdateProduct = (new_product, tenant, id) =>
             expired_date: new_product["Fecha de Expiración"]
         }
     }))
+
+
+export const UpdateCustomer = (new_product, tenant, id) => 
+    API.graphql(graphqlOperation(mutation.updateCustomer, {
+        input: {
+            id: id,
+            tenant_id: tenant,
+            first_name: new_product["Nombre"],
+            last_name: new_product["Apellido"]
+        }
+    }))
     
 
 
@@ -84,17 +95,28 @@ export const DeleteClient = id =>
         }
     }))
 
+
     
 
 
 export const SubscribeToProductsTableAtDelete = () => 
     API.graphql(graphqlOperation(subscription.onDeleteProduct))
 
-
-
 export const SubscribeToProductsTableAtCreate = () => 
     API.graphql(graphqlOperation(subscription.onCreateProduct))
+
+export const SubscribeToProductsTableAtUpdate = () => 
+    API.graphql(graphqlOperation(subscription.onUpdateProduct))
+
+
+
 
 
 export const SubscribeToClientsAtCreate = () =>
     API.graphql(graphqlOperation(subscription.onCreateCustomer))
+
+export const SubscribeToClientsAtUpdate = () =>
+    API.graphql(graphqlOperation(subscription.onUpdateCustomer))
+
+export const SubscribeToClientsAtDelete = () =>
+    API.graphql(graphqlOperation(subscription.onDeleteCustomer))

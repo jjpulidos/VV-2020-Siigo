@@ -8,6 +8,7 @@ import { Load } from './Screens/Load/Load';
 import { MainMenu } from './Screens/MainMenu/MainMenu';
 import { ControlPanel } from './Screens/ControlPanel/ControlPanel';
 import { AddClient } from './Screens/AddClient/AddClient';
+import { Analitics } from './Screens/Analitics/Analitics';
 
 const App = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const App = () => {
       <Load path='load' />
       <AddClient path='add-client' />
       <ControlPanel path='control-panel' />
+      <Analitics path='analitics' />
     </Router>
   );
 };
