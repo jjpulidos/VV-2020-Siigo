@@ -4,6 +4,7 @@ export const LoginMainContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -16,3 +17,8 @@ export const Subtitle = styled.p`
   margin: 1em 0 0.2em 0;
   padding: 0;
 `;
+
+
+export const ImageWrapper = styled.img `
+    width: 5%;
+`

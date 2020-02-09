@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import * as st from './Login.styles.js';
-import { Input, Button } from 'antd';
+import { Input, Button, Icon } from 'antd';
 import { Auth } from 'aws-amplify';
 import { navigate } from '@reach/router';
 
@@ -9,6 +9,7 @@ export const Login = () => {
     email: '',
     pass: ''
   });
+  const [Loading, setLoading] = useState(false)
 
   useEffect(() => {
     CheckSession();
@@ -16,17 +17,45 @@ export const Login = () => {
 
   const CheckSession = async () => {
     let session = await Auth.currentAuthenticatedUser();
-    session && navigate('load');
+    session && navigate('main-menu');
   };
 
   const LoginService = async () => {
+    setLoading(true)
     Auth.signIn(LoginCredentials.email, LoginCredentials.pass)
-      .then(res => console.log('successful logged in ', res))
-      .catch(err => console.error(err));
+      .then(res => {
+        localStorage.setItem('user-id', res.attributes.sub)
+        console.log('successful logged in ', res)
+        navigate('main-menu')
+        setLoading(false)
+      })
+      .catch(err => {
+        setLoading(false)
+        console.error(err)
+      });
   };
+
+
+  // This is an utility function, just for create tenants
+  const Register = async () => {
+    try {
+      let response = await Auth.signUp(LoginCredentials.email, LoginCredentials.pass)
+      console.log(response.attributes.sub)
+    }catch (err){
+      console.error(err)
+    }
+  }
+
+  const Confirm = async () => {
+    let res = await Auth.confirmSignUp(LoginCredentials.email, LoginCredentials.pass)
+    console.log(res)
+  }
 
   return (
     <st.LoginMainContainer>
+
+      <st.ImageWrapper src={require('../../Assets/logo_vvc.svg')} />
+
       <st.LoginBox>
         <st.Subtitle> Correo de la empresa </st.Subtitle>
         <Input
@@ -45,11 +74,10 @@ export const Login = () => {
 
         <Button
           type='primary'
-          style={{ marginTop: '2em' }}
+          style={{ width: '100%', marginTop: '2em' }}
           onClick={LoginService}
         >
-          {' '}
-          Entrar{' '}
+         {Loading ? <Icon type='loading' style={{color: 'white'}} /> : "Ingresar"}
         </Button>
       </st.LoginBox>
     </st.LoginMainContainer>

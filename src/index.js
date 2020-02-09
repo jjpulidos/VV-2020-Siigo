@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
 import 'antd/dist/antd.css';
+import 'filepond/dist/filepond.min.css';
 
 Amplify.configure(config);
 

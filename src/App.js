@@ -5,16 +5,22 @@ import { Login } from './Screens/Login/Login';
 
 import { Router, navigate } from '@reach/router';
 import { Load } from './Screens/Load/Load';
+import { MainMenu } from './Screens/MainMenu/MainMenu';
+import { ControlPanel } from './Screens/ControlPanel/ControlPanel';
+import { AddClient } from './Screens/AddClient/AddClient';
 
 const App = () => {
   useEffect(() => {
-    navigate('login');
+    //navigate('main-menu');
   }, []);
 
   return (
     <Router>
-      <Login path='/login' />
+      <Login path='login' />
+      <MainMenu path='main-menu' />
       <Load path='load' />
+      <AddClient path='add-client' />
+      <ControlPanel path='control-panel' />
     </Router>
   );
 };
