@@ -28,3 +28,22 @@ export const FilePondContainer = styled.div `
     position: absolute;
     margin-top: 2em;
 `
+
+export const SendButtonContainer = styled.div `
+    grid-column: 1/3;
+    grid-row: 12/13;
+`
+
+export const LoadingState = styled.div `
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    background: 'rgba(0, 0, 0, .5)';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

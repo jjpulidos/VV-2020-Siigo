@@ -9,6 +9,6 @@ export const CreateProductService = data =>
             name: data.name,
             description: data.description,
             price: data.price,
-            expired_date: data.expired_date
+            expired_date: data.expired_date || "n/a"
         }
     }))

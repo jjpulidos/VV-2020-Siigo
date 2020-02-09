@@ -3,6 +3,7 @@ import * as st from './Load.styles';
 import { Button } from 'antd';
 import { ManualLoad } from './Components/ManualLoad/ManualLoad';
 import { MassiveLoad } from './Components/MassiveLoad/MassiveLoad';
+import { Auth } from 'aws-amplify';
 
 export const Load = () => {
   const [LoadOption, setLoadOption] = useState(null);
@@ -11,7 +12,7 @@ export const Load = () => {
 
     {/* This block let the user choose between the load options  */}
       <st.LoadOptionsContainer>
-        <st.Title>Tipo de carga</st.Title>
+        <st.Title onClick={()=>Auth.signOut()}>Tipo de carga</st.Title>
         <Button onClick={() => setLoadOption(1)} type='primary'>
           {' '}
           Carga Manual{' '}

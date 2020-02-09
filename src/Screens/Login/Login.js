@@ -21,9 +21,29 @@ export const Login = () => {
 
   const LoginService = async () => {
     Auth.signIn(LoginCredentials.email, LoginCredentials.pass)
-      .then(res => console.log('successful logged in ', res))
+      .then(res => {
+        localStorage.setItem('user-id', res.attributes.sub)
+        console.log('successful logged in ', res)
+        navigate('/load')
+      })
       .catch(err => console.error(err));
   };
+
+
+  // This is an utility function, just for create tenants
+  const Register = async () => {
+    try {
+      let response = await Auth.signUp(LoginCredentials.email, LoginCredentials.pass)
+      console.log(response.attributes.sub)
+    }catch (err){
+      console.error(err)
+    }
+  }
+
+  const Confirm = async () => {
+    let res = await Auth.confirmSignUp(LoginCredentials.email, LoginCredentials.pass)
+    console.log(res)
+  }
 
   return (
     <st.LoginMainContainer>

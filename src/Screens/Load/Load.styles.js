@@ -28,7 +28,7 @@ export const SelectedLoadOptionContainer = styled.div`
   width: 100%;
   height: 100%;
   grid-column: 2/12;
-  grid-row: 3/11;
+  grid-row: 3/12;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);

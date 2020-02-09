@@ -14,7 +14,9 @@ export const ManualLoadContainer = styled.div`
 export const Form = styled.div`
   grid-column: 1/10;
   grid-row: 6/7;
-    
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
    
 `;
 
@@ -26,6 +28,5 @@ export const Field = styled.div`
 
 export const FieldTitle = styled.p`
   margin: 0;
-  font-weight: bolder;
-  font-size: 1.2em;
+  font-size: 1em;
 `;
