@@ -5567,7 +5567,6 @@ def analytic_metrics(tenant_id):
 
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
 
-
         # Mean Money Collected Graphics
 
         print("Mean Money Collected per Invoice Yearly")

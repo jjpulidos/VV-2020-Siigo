@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e63b9ed-996e-4b58-96d3-6d1b106790c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/VV-2020-Siigo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VV-2020-Siigo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/Read_DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Read_DB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/test_faker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/backend-config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/parameters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplify/backend/backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/backend-config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/lambda_function.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,29 +48,7 @@
       <recent name="$PROJECT_DIR$/venv/lib/python3.7" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Connection_DynamoDB">
-    <configuration name="Connection_DynamoDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="VV-2020-Siigo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Analytics" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.Generator_Analytics">
     <configuration name="Data_Generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VV-2020-Siigo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,6 +63,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analytics/Data_Generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Generator_Analytics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VV-2020-Siigo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Analytics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analytics/Generator_Analytics.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Connection_DynamoDB" />
+        <item itemvalue="Python.Generator_Analytics" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Read_DB" />
         <item itemvalue="Python.Data_Generator" />
@@ -188,7 +170,7 @@
       <updated>1581175325085</updated>
       <workItem from="1581175329591" duration="20845000" />
       <workItem from="1581205447033" duration="372000" />
-      <workItem from="1581206164251" duration="29268000" />
+      <workItem from="1581206164251" duration="30079000" />
     </task>
     <servers />
   </component>
