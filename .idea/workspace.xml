@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8e63b9ed-996e-4b58-96d3-6d1b106790c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/Customers_CUEROS.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Analytics/Generator_Analytics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Generator_Analytics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/test_faker.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/testi.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/products_CUEROS.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/products_Cueros.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/products_JP.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/products_RP.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/lambda.function.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +58,7 @@
       <recent name="$PROJECT_DIR$/venv/lib/python3.7" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Generator_Analytics">
+  <component name="RunManager" selected="Python.lambda_analytics">
     <configuration name="Data_Generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VV-2020-Siigo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,6 +125,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="lambda_analytics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VV-2020-Siigo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Analytics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analytics/lambda_analytics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VV-2020-Siigo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,6 +171,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.lambda_analytics" />
         <item itemvalue="Python.Generator_Analytics" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Read_DB" />
@@ -176,7 +203,7 @@
       <updated>1581175325085</updated>
       <workItem from="1581175329591" duration="20845000" />
       <workItem from="1581205447033" duration="372000" />
-      <workItem from="1581206164251" duration="39727000" />
+      <workItem from="1581206164251" duration="46567000" />
     </task>
     <servers />
   </component>
@@ -188,22 +215,22 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581190863219" />
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581265149279">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581275890448">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581265149279" />
-    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581265149279">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581275890448" />
+    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581275890448">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581265149279" />
-    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581265149279">
+    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581275890448" />
+    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581275890448">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581265149279" />
-    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581265149279">
+    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581275890448" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581275890448">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581265149279" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581275890448" />
     <state x="484" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1581190835574">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -226,9 +253,10 @@
     <state x="658" y="259" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1581248043194" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Connection_DynamoDB.coverage" NAME="Generator_Analytics Coverage Results" MODIFIED="1581265149270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Connection_DynamoDB.coverage" NAME="Generator_Analytics Coverage Results" MODIFIED="1581269258481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
     <SUITE FILE_PATH="coverage/VV_2020_Siigo$Data_Generator.coverage" NAME="Data_Generator Coverage Results" MODIFIED="1581189703410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
     <SUITE FILE_PATH="coverage/VV_2020_Siigo$main.coverage" NAME="main Coverage Results" MODIFIED="1581246736352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$lambda_analytics.coverage" NAME="lambda_analytics Coverage Results" MODIFIED="1581275890419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
     <SUITE FILE_PATH="coverage/VV_2020_Siigo$Read_DB.coverage" NAME="Read_DB Coverage Results" MODIFIED="1581235517702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
   </component>
 </project>

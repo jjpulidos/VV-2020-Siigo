@@ -5590,7 +5590,7 @@ def analytic_metrics(tenant_id):
         df3 = pd.DataFrame({'doc_date': sf3.index, 'mean_money_collected': sf3.values})
         print("")
 
-        respuesta["Valor_Factura_Promedio_Mensual"] = df3.to_json(orient='values')
+        respuesta["Valor_Factura_Promedio_Anual"] = df3.to_json(orient='values')
         # print("Total Money Collected Per Month", df_Invoices_value.loc[:, "total_value"].resample('M').sum())
         # print("")
 
@@ -5608,6 +5608,7 @@ def analytic_metrics(tenant_id):
         print("Invoices Ammount per Month")
         sf4 = df_Invoices_value.loc[:, "total_value"].resample('M').count()
         df4 = pd.DataFrame({'doc_date': sf4.index, 'mean_money_collected': sf4.values})
+        respuesta["Numero_Facturas_Mensual"] = df4.to_json(orient='values')
 
         print("")
 
@@ -5620,7 +5621,9 @@ def analytic_metrics(tenant_id):
 
         print("Customers Proportion per Month")
         sf5 = df_Customers.groupby([pd.Grouper(freq='1M', key='doc_date'), 'customer_id']).count().groupby('doc_date').count()/nro_customers * 100
-        df5 = pd.DataFrame({'doc_date': sf5.index, 'mean_money_collected': sf5.values})
+        # df5 = pd.DataFrame({'doc_date': sf5.index, 'mean_money_collected': sf5.values})
+        respuesta["Valor_Factura_Promedio_Mensual"] = sf5.to_json(orient='values')
+
         print("")
 
         # ####################################################################################################################
@@ -5629,33 +5632,40 @@ def analytic_metrics(tenant_id):
         # Mean Money Collected Metric
 
         print("Mean Money Collected per Invoice")
-        print(df_Invoices_value.loc[:, "total_value"].resample('Y').mean().mean())
+        # print(df_Invoices_value.loc[:, "total_value"].resample('Y').mean().mean())
+        respuesta["Media_Valor_Factura"] = df_Invoices_value.loc[:, "total_value"].resample('Y').mean().mean()
         print("")
 
         # Customers Proportion Metrics
         print("Customers Proportion")
-        print(df_Customers.groupby([pd.Grouper(freq='1Y', key='doc_date'), 'customer_id']).count().groupby('customer_id').count().count())
+        # print(df_Customers.groupby([pd.Grouper(freq='1Y', key='doc_date'), 'customer_id']).count().groupby('customer_id').count().count())
+        # print()
+        respuesta["Tasa_clientes"] = df_Customers.groupby([pd.Grouper(freq='1Y', key='doc_date'), 'customer_id']).count().groupby('customer_id').count().count()[0]
         print("")
 
 
         # Total Money Collected Metrics
 
-        print("Total Money Collected", df_Invoices_value.loc[:, "total_value"].resample('M').sum().sum())
+        # print("Total Money Collected", df_Invoices_value.loc[:, "total_value"].resample('M').sum().sum())
+        respuesta["Monto_total_facturas"] = df_Invoices_value.loc[:, "total_value"].resample('M').sum().sum()
         print("")
 
         print("Total Invoices Ammount")
-        print(df_Invoices_value.loc[:, "total_value"].resample('M').count().sum())
+        # print(df_Invoices_value.loc[:, "total_value"].resample('M').count().sum())
+        respuesta["Numero_total_facturas"] = df_Invoices_value.loc[:, "total_value"].resample('M').count().sum()
         print("")
 
-        print("Number of Customers Created ", nro_customers)
+        # print("Number of Customers Created ", nro_customers)
+        respuesta["Numero_Clientes"]= nro_customers
         print("")
 
+    return respuesta
 
 
 
 
 
-
+print(analytic_metrics("hola"))
     # print(df_Invoices_days)
 
 
