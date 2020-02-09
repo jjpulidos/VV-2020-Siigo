@@ -21,7 +21,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/auth/vv2020siigo-cloudformation-template.yml",
 				"logicalId": "authvv2020siigo"
 			},
-			"lastPushTimeStamp": "2020-02-08T18:44:15.219Z",
+			"lastPushTimeStamp": "2020-02-09T09:28:58.355Z",
 			"output": {
 				"AppClientSecret": "1pv2snqludtd1r65jrhoo54451f1kfofos4srn8cdfrr68ntlj3c",
 				"UserPoolId": "us-west-2_BWLOmkh5J",
@@ -42,21 +42,23 @@
 				"authConfig": {
 					"additionalAuthenticationProviders": [],
 					"defaultAuthentication": {
-						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
-						"userPoolConfig": {
-							"userPoolId": "authvv2020siigo"
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "desc1",
+							"apiKeyExpirationDays": "360"
 						}
 					}
 				},
 				"GraphQLAPIIdOutput": "audikvopovh2tbgiuxmmbys7vu",
-				"GraphQLAPIEndpointOutput": "https://5yv5obbypvgaxdswzcide2khoq.appsync-api.us-west-2.amazonaws.com/graphql"
+				"GraphQLAPIEndpointOutput": "https://5yv5obbypvgaxdswzcide2khoq.appsync-api.us-west-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-fvwq55ppkrcehie4g75hphspkq"
 			},
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apivv2020siigo"
 			},
-			"lastPushTimeStamp": "2020-02-08T18:44:15.227Z",
-			"lastPushDirHash": "uGm4HWlTebG4lpopnSWEBiaNaCU="
+			"lastPushTimeStamp": "2020-02-09T09:28:58.358Z",
+			"lastPushDirHash": "jjzG8F0gvAIAsOAj8uMkNvbSxK0="
 		}
 	},
 	"storage": {
@@ -67,7 +69,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vv-2020-siigo-vvsiigo-105803-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storagevv2020siigo"
 			},
-			"lastPushTimeStamp": "2020-02-08T18:44:15.222Z",
+			"lastPushTimeStamp": "2020-02-09T09:28:58.356Z",
 			"output": {
 				"BucketName": "vv2020siigo-vvsiigo",
 				"Region": "us-west-2"

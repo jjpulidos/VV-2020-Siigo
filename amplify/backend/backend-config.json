@@ -14,9 +14,10 @@
 				"authConfig": {
 					"additionalAuthenticationProviders": [],
 					"defaultAuthentication": {
-						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
-						"userPoolConfig": {
-							"userPoolId": "authvv2020siigo"
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "desc1",
+							"apiKeyExpirationDays": "360"
 						}
 					}
 				}
