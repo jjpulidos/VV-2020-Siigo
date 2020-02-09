@@ -39,7 +39,6 @@ dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
 # )
 
 
-
 # Adding a row in Product
 # Product = dynamodb.Table(tableName["Product"])
 # email = "multifunctionallab@gmail.com"
