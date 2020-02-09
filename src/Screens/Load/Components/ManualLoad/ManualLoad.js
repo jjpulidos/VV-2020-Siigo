@@ -14,12 +14,12 @@ export const ManualLoad = () => {
   });
   const [FieldsInitialState] = useState({"Nombre": '',"Descripción": '',"Precio": '',"Fecha de Expiración": ''})
   const Toast = Swal.mixin({
-    toast: true,
-    position: 'top',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-})
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+  })
   const [ID, setID] = useState(localStorage.getItem("user-id"))
 
 

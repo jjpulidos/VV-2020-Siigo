@@ -29,6 +29,7 @@ export const MassiveLoad = () => {
 
     //This is a general function to handle the loading state
     const ChangeLoadingStateBeforeSend = (bool, option, folder=null, files=null) => {
+        
         setLoadingScreen(bool);
         option === 1 ? SendDataToProcessingMicroService() : SendProcessingRequest(folder, files)
         option === 2 && ShowSweetAlert()
@@ -45,6 +46,7 @@ export const MassiveLoad = () => {
 
     //This function sends all files to S3 through the StorageInteraction service
     const SendDataToProcessingMicroService = () => {
+        
         let random_id = RandomIdGenerator()
         try {
             Files[0].forEach(async (file, index) => {
@@ -66,6 +68,7 @@ export const MassiveLoad = () => {
     // This Function send a post request to the batch processing micro service
     // It doesn't have a response cause is just for compute the csv to dynamo transition
     const SendProcessingRequest = (folder, files) => {
+        
         setFiles([])
         Axios({
             method: 'post',
@@ -98,7 +101,7 @@ export const MassiveLoad = () => {
                     <FilePond
                         labelIdle='Arrastra o selecciona archivo (MAX. 5)'
                         allowMultiple={true}
-                        files={Files}
+                        files={Files[0]}
                         maxFiles={5}
                         onupdatefiles={e => setFiles([...Files, e.map(x => x.file)])}
                     />

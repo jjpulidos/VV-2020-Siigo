@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import * as st from './Login.styles.js';
-import { Input, Button } from 'antd';
+import { Input, Button, Icon } from 'antd';
 import { Auth } from 'aws-amplify';
 import { navigate } from '@reach/router';
 
@@ -9,6 +9,7 @@ export const Login = () => {
     email: '',
     pass: ''
   });
+  const [Loading, setLoading] = useState(false)
 
   useEffect(() => {
     CheckSession();
@@ -16,17 +17,22 @@ export const Login = () => {
 
   const CheckSession = async () => {
     let session = await Auth.currentAuthenticatedUser();
-    session && navigate('load');
+    session && navigate('main-menu');
   };
 
   const LoginService = async () => {
+    setLoading(true)
     Auth.signIn(LoginCredentials.email, LoginCredentials.pass)
       .then(res => {
         localStorage.setItem('user-id', res.attributes.sub)
         console.log('successful logged in ', res)
-        navigate('/load')
+        navigate('main-menu')
+        setLoading(false)
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        setLoading(false)
+        console.error(err)
+      });
   };
 
 
@@ -47,6 +53,9 @@ export const Login = () => {
 
   return (
     <st.LoginMainContainer>
+
+      <st.ImageWrapper src={require('../../Assets/logo_vvc.svg')} />
+
       <st.LoginBox>
         <st.Subtitle> Correo de la empresa </st.Subtitle>
         <Input
@@ -65,11 +74,10 @@ export const Login = () => {
 
         <Button
           type='primary'
-          style={{ marginTop: '2em' }}
+          style={{ width: '100%', marginTop: '2em' }}
           onClick={LoginService}
         >
-          {' '}
-          Entrar{' '}
+         {Loading ? <Icon type='loading' style={{color: 'white'}} /> : "Ingresar"}
         </Button>
       </st.LoginBox>
     </st.LoginMainContainer>
