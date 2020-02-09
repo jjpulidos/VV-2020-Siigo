@@ -5404,7 +5404,7 @@ def faker_generator_customers(num_ten):
 def faker_generator_products(num_prod):
     from faker import Faker
     faker = Faker()
-    tenant_id = "hola"
+    tenant_id = "ec059827-3fdd-4ed7-86c2-0a6ec60b6f3b"
     rows_list = []
     for i in range(num_prod):
         dict1 = {}
@@ -5417,29 +5417,29 @@ def faker_generator_products(num_prod):
     df = pd.DataFrame(rows_list, columns=["id", "tenant_id", "name", "description", "expired_date"])
     df["price"] = np.random.uniform(1000.0, 10000.0, num_prod).astype(float).round(2)
     df["name"] = [lst_prod[np.random.randint(0, len(lst_prod))] for i in range(num_prod)]
-    df.to_csv("products_CUEROS.csv", index=False)
+    df.to_csv("products_Ronald.csv", index=False)
 
-    dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
-    Product = dynamodb.Table(tableName["Product"])
-
-    for index, row in df.iterrows():
-        name = row["name"]
-        tenant_id = row.tenant_id
-        id = row["id"]
-        description = row.description
-        price = decimal.Decimal(str(row.price))
-        expired_date = row.expired_date
-
-        response = Product.put_item(
-           Item={
-                'id': id,
-                'tenant_id': tenant_id,
-                'name': name,
-                'description': description,
-                'price': price,
-                'expired_date': expired_date
-            }
-        )
+    # dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
+    # Product = dynamodb.Table(tableName["Product"])
+    #
+    # for index, row in df.iterrows():
+    #     name = row["name"]
+    #     tenant_id = row.tenant_id
+    #     id = row["id"]
+    #     description = row.description
+    #     price = decimal.Decimal(str(row.price))
+    #     expired_date = row.expired_date
+    #
+    #     response = Product.put_item(
+    #        Item={
+    #             'id': id,
+    #             'tenant_id': tenant_id,
+    #             'name': name,
+    #             'description': description,
+    #             'price': price,
+    #             'expired_date': expired_date
+    #         }
+    #     )
 
     return 0
 
@@ -5565,50 +5565,62 @@ def analytic_metrics(tenant_id):
 
     # df_Invoices_days = df_Invoices_value.groupby(by=df_Invoices_value.doc_date.dt.month)
 
-    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+
+        respuesta = {}
 
         # Mean Money Collected Graphics
 
-        print("Mean Money Collected per Invoice Yearly")
-        print(df_Invoices_value.loc[:, "total_value"].resample('Y').mean())
-        print("")
+        # print("Mean Money Collected per Invoice Yearly")
+        # sf1 = df_Invoices_value.loc[:, "total_value"].resample('Y').mean()
+        # df1 = pd.DataFrame({'doc_date': sf1.index, 'mean_money_collected': sf1.values})
+        # print("")
 
         print("Mean Money Collected per Invoice Monthly")
-        print(df_Invoices_value.loc[:, "total_value"].resample('M').mean())
+        sf2 = df_Invoices_value.loc[:, "total_value"].resample('M').mean()
+        df2 = pd.DataFrame({'doc_date': sf2.index, 'mean_money_collected': sf2.values})
         print("")
 
+        respuesta["Valor_Factura_Promedio_Mensual"] = df2.to_json(orient='values')
 
         # Total Money Collected Graphics
 
-        print("Total Money Collected Per Year", df_Invoices_value.loc[:, "total_value"].resample('Y').sum())
+        print("Total Money Collected Per Year")
+        sf3 = df_Invoices_value.loc[:, "total_value"].resample('Y').sum()
+        df3 = pd.DataFrame({'doc_date': sf3.index, 'mean_money_collected': sf3.values})
         print("")
 
-        print("Total Money Collected Per Month", df_Invoices_value.loc[:, "total_value"].resample('M').sum())
-        print("")
+        respuesta["Valor_Factura_Promedio_Mensual"] = df3.to_json(orient='values')
+        # print("Total Money Collected Per Month", df_Invoices_value.loc[:, "total_value"].resample('M').sum())
+        # print("")
 
 
         # Invoices Ammount Graphics
-        print("Mean Invoices Ammount Yearly")
-        print(df_Invoices_value.loc[:, "total_value"].resample('Y').count().mean())
-        print("")
 
-        print("Invoices Ammount per Year")
-        print(df_Invoices_value.loc[:, "total_value"].resample('Y').count())
-        print("")
+        # print("Mean Invoices Ammount Yearly")
+        # print(df_Invoices_value.loc[:, "total_value"].resample('Y').count().mean())
+        # print("")
+
+        # print("Invoices Ammount per Year")
+        # print(df_Invoices_value.loc[:, "total_value"].resample('Y').count())
+        # print("")
 
         print("Invoices Ammount per Month")
-        print(df_Invoices_value.loc[:, "total_value"].resample('M').count())
+        sf4 = df_Invoices_value.loc[:, "total_value"].resample('M').count()
+        df4 = pd.DataFrame({'doc_date': sf4.index, 'mean_money_collected': sf4.values})
+
         print("")
 
 
         # Customers Proportion Graphics
 
-        print("Customers Proportion per Year")
-        print(df_Customers.groupby([pd.Grouper(freq='1Y', key='doc_date'), 'customer_id']).count().groupby('doc_date').count()/nro_customers * 100)
-        print("")
+        # print("Customers Proportion per Year")
+        # print(df_Customers.groupby([pd.Grouper(freq='1Y', key='doc_date'), 'customer_id']).count().groupby('doc_date').count()/nro_customers * 100)
+        # print("")
 
         print("Customers Proportion per Month")
-        print(df_Customers.groupby([pd.Grouper(freq='1M', key='doc_date'), 'customer_id']).count().groupby('doc_date').count()/nro_customers * 100)
+        sf5 = df_Customers.groupby([pd.Grouper(freq='1M', key='doc_date'), 'customer_id']).count().groupby('doc_date').count()/nro_customers * 100
+        df5 = pd.DataFrame({'doc_date': sf5.index, 'mean_money_collected': sf5.values})
         print("")
 
         # ####################################################################################################################
@@ -5641,23 +5653,7 @@ def analytic_metrics(tenant_id):
 
 
 
-        # Prophet
 
-        # print("Mean Money Collected per Invoice Daily")
-        # print(df_Invoices_value.loc[:, "total_value"].resample('M').mean())
-        # print("")
-
-        # print("Total Money Collected Per Day", df_Invoices_value.loc[:, "total_value"].resample('D').sum())
-        # print("")
-
-        # print("Invoices Ammount per Day")
-        # print(df_Invoices_value.loc[:, "total_value"].resample('D').count())
-        # print("")
-
-        # print("Customers Proportion per Day")
-        # print(df_Customers.groupby([pd.Grouper(freq='1D', key='doc_date'), 'customer_id']).count().groupby(
-        #     'doc_date').count() / nro_customers * 100)
-        # print("")
 
 
     # print(df_Invoices_days)
@@ -5669,6 +5665,37 @@ def analytic_metrics(tenant_id):
 
 
 
-# faker_generator_products(30)
+# faker_generator_products(10)
 # faker_generator_invoices_and_items(2000)
-analytic_metrics("hola")
+# analytic_metrics("hola")
+
+
+# Prophet
+
+# print("Mean Money Collected per Invoice Daily")
+# sf = df_Invoices_value.loc[:, "total_value"].resample('D').mean()
+# df = pd.DataFrame({'doc_date': sf.index, 'mean_money_collected': sf.values})
+# df.to_csv("mean_money_collected_daily.csv", index=False)
+# print(df)
+
+# print("Total Money Collected Per Day")
+# sf = df_Invoices_value.loc[:, "total_value"].resample('D').sum()
+# df = pd.DataFrame({'doc_date': sf.index, 'total_money_collected': sf.values})
+# df.to_csv("total_money_collected_daily.csv", index=False)
+# print("")
+
+# print("Invoices Ammount per Day")
+# sf = df_Invoices_value.loc[:, "total_value"].resample('D').count()
+# df = pd.DataFrame({'doc_date': sf.index, 'invoice_ammount_collected': sf.values})
+# df.to_csv("invoice_ammount_collected_daily.csv", index=False)
+# print(sf)
+# print("")
+
+# print("Customers Activity Ratio per Day")
+#         sf = df_Customers.groupby([pd.Grouper(freq='1D', key='doc_date'), 'customer_id']).count().groupby(
+#             'doc_date').count() / nro_customers * 100
+#
+#         # df = pd.DataFrame({'doc_date': sf.index, 'customer_ratio_collected': sf.values})
+#         sf.to_csv("customers_ratio_collected_daily.csv")
+#         # print(sf)
+#         # print("")
