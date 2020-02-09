@@ -7,7 +7,7 @@ import Axios from 'axios'
 
 export const Analitics = () => {
     const [RawData] = useState()
-    const [Data1, setData1] = useState([])
+    const [Data1, setData1] = useState([]) 
     const [Data2, setData2] = useState([])
     const [Data3, setData3] = useState([])
     const [Data4, setData4] = useState([])
