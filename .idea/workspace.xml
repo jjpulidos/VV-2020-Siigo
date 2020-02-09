@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e63b9ed-996e-4b58-96d3-6d1b106790c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/VV-2020-Siigo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VV-2020-Siigo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analytics/Data_Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Data_Generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analytics/Read_DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/Read_DB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics/test_faker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/amplify-meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/api/vv2020siigo/parameters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/#current-cloud-backend/backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/#current-cloud-backend/backend-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/amplify-meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/cloudformation-template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/build/parameters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/parameters.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/api/vv2020siigo/parameters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/awscloudformation/nested-cloudformation-stack.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify/backend/backend-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/amplify/backend/backend-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/lambda_function.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +66,29 @@
       <recent name="$PROJECT_DIR$/venv/lib/python3.7" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.Connection_DynamoDB">
+    <configuration name="Connection_DynamoDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VV-2020-Siigo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Analytics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analytics/Connection_DynamoDB.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Data_Generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VV-2020-Siigo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,6 +157,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Connection_DynamoDB" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Read_DB" />
         <item itemvalue="Python.Data_Generator" />
@@ -147,7 +186,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581175325085</updated>
-      <workItem from="1581175329591" duration="20568000" />
+      <workItem from="1581175329591" duration="20845000" />
+      <workItem from="1581205447033" duration="372000" />
+      <workItem from="1581206164251" duration="29268000" />
     </task>
     <servers />
   </component>
@@ -159,30 +200,47 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581190863219" />
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581198837650">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1581249378442">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581198837650" />
-    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581198837649">
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1581249378442" />
+    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1581249378442">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581198837649" />
-    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581198837649">
+    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1581249378442" />
+    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1581249378442">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581198837649" />
-    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581198837649">
+    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1581249378442" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1581249378442">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581198837649" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1581249378442" />
     <state x="484" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1581190835574">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="484" y="188" width="1022" height="737" key="SettingsEditor/70.27.1850.1053@70.27.1850.1053" timestamp="1581190835574" />
+    <state width="439" height="446" key="SwitcherDM" timestamp="1581218178116">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="439" height="446" key="SwitcherDM/70.27.1850.1053@70.27.1850.1053" timestamp="1581218178116" />
+    <state x="170" y="127" width="1650" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581209944658">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="170" y="127" width="1650" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581209944658" />
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1581206179111">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581206179111" />
+    <state x="658" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581248043194">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="658" y="259" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1581248043194" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Connection_DynamoDB.coverage" NAME="Connection_DynamoDB Coverage Results" MODIFIED="1581249378434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
     <SUITE FILE_PATH="coverage/VV_2020_Siigo$Data_Generator.coverage" NAME="Data_Generator Coverage Results" MODIFIED="1581189703410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
-    <SUITE FILE_PATH="coverage/VV_2020_Siigo$main.coverage" NAME="main Coverage Results" MODIFIED="1581198837643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
-    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Read_DB.coverage" NAME="Read_DB Coverage Results" MODIFIED="1581191582899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$main.coverage" NAME="main Coverage Results" MODIFIED="1581246736352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
+    <SUITE FILE_PATH="coverage/VV_2020_Siigo$Read_DB.coverage" NAME="Read_DB Coverage Results" MODIFIED="1581235517702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analytics" />
   </component>
 </project>

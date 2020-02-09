@@ -2,6 +2,8 @@ from __future__ import print_function # Python 2/3 compatibility
 import boto3
 import json
 import decimal
+import datetime
+import bson
 from boto3.dynamodb.conditions import Key, Attr
 from botocore.exceptions import ClientError
 import os
@@ -46,11 +48,12 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 # ##############################################################################################
 # Product = dynamodb.Table(tableName["Product"])
 # response = Product.scan(
-#     FilterExpression=Key('name').eq("Tomate Cherry")
+#     # FilterExpression=Key('name').eq("Tomate Cherry")
 # )
 #
 # for i in response['Items']:
-#     print(i['name'], ":", i['description'], ":", i['id'])
+#     # print(i['name'], ":", i['description'], ":", i['id'])
+#     print(i['id'])
 
 # ##############################################################################################
 
@@ -84,12 +87,20 @@ dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 
 
 # ##############################################################################################
-# InvoiceItem = dynamodb.Table(tableName["Invoice_Item"])
-#
-# response = InvoiceItem.scan(
-#     FilterExpression=Key('invoice_id').eq("5e3f02966841606e28bb69eb")
-# )
-#
+InvoiceItem = dynamodb.Table(tableName["Invoice_Item"])
+
+response = InvoiceItem.scan(
+    # FilterExpression=Key('invoice_id').eq("5e3f02966841606e28bb69eb")
+)
+
+print(len(response['Items']))
 # for i in response['Items']:
 #     print(i['invoice_id'], ":", i['quantity'], ":", i['unit_value'], ":", i["item_value"])
 # ##############################################################################################
+
+#
+# print(response)
+#
+# print(type(response))
+#
+# print(response["id"])
