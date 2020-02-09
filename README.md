@@ -79,10 +79,16 @@ Se halló que la **Media aritmética para el Valor Factura con ventana de tiempo
     Predicción 9 de Febrero 2020: 338.651,37 COP
     
 * **Modelo entrenado con Librería Prophet**
+
+
 ![](https://i.imgur.com/Llfu9Nx.png)
 
+
 * **Gráfica de componentes**
+
+
 ![](https://i.imgur.com/hZDStds.png)
+
 
 
 Esto permite al empresario realizar Análisis de Tendencia, Decisiones de Negocio y/o Análisis de Estabilidad
@@ -95,11 +101,17 @@ Se halló que la **Suma del Valor de las Facturas con ventana de tiempo diaria**
     
     
 * **Modelo entrenado con Librería Prophet**
+
+
 ![](https://i.imgur.com/uM3ceNH.png)
 
 
+
 * **Gráfica de componentes**
+
+
 ![](https://i.imgur.com/Geb5l4T.png)
+
 
 Esto permite al empresario realizar Decisiones Financieras
 
@@ -112,12 +124,17 @@ Se halló que el **Número de Facturas por Día** es de:
     
     
 * **Modelo entrenado con Librería Prophet**
+
+
 ![](https://i.imgur.com/o4j3CyZ.png)
 
 
 
 * **Gráfica de componentes**
+
+
 ![](https://i.imgur.com/nQcdLBY.png)
+
 
 
 Esto permite al empresario evaluar un posible aumento o disminución de recursos computacionales
@@ -130,11 +147,17 @@ Se halló que la **Tasa de Clientes Activos** es de:
     Predicción 9 de Febrero 2020: Aproximadamente 5.21 % de los clientes realizará compras
     
 * **Modelo entrenado con Librería Prophet**
+
+
 ![](https://i.imgur.com/UMRu2AG.png)
 
 
+
 * **Gráfica de componentes**
+
+
 ![](https://i.imgur.com/aBa0qgV.png)
+
 
 
 Esto permite al empresario evaluar Promociones y Seguimiento
