@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^3.26.9",
     "aws-amplify": "^2.2.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "filepond": "^4.10.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
